@@ -1,3 +1,11 @@
+/* Replace MyCustomFont with the actual font name */
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/Altone\ Trial-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* ===== BRAND COLORS ===== */
     --color-primary: #e53935;
@@ -46,9 +54,9 @@
     --info: #17a2b8;
 
     /* ===== FONT FAMILIES ===== */
-    --font-primary: 'Poppins', Arial, sans-serif;
-    --font-secondary: 'Montserrat', 'Segoe UI', sans-serif;
-    --font-mono: 'Courier New', monospace;
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
 
     /* ===== FONT SIZES (scale) ===== */
     --fs-xs: 0.75rem;
@@ -79,12 +87,13 @@
 
 * {
     box-sizing: border-box;
+    font-family: iam-font, sans-serif;
 }
 
 /* --- Basic Page Reset --- */
 body {
     margin: 0;
-    font-family: Poppins, Arial, sans-serif;
+    font-family: iam-font, sans-serif;
     overflow-x: hidden;
 }
 
@@ -612,11 +621,45 @@ html {
 
 #content-2 {
     height: 100vh;
-    padding: 5%;
+    padding: 10% 5%;
 }
 
 #content-2 .container {
     height: 100%;
     width: 100%;
-    background-color: green;
+    text-align: center;
+}
+
+#content-2 .iam-parent {
+    height: 80%;
+    width: 100%;
+    display: flex;
+}
+
+#content-2 .iam-left {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+#content-2 .iam-right {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#content-2 .iam-left {
+
+}
+
+#content-2 .iam-right {
+
+}
+
+#content-2 .iam-right video {
+    width: 90%;
+    border-radius: 20px;
 }
