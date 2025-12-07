@@ -145,23 +145,6 @@ html {
     cursor: pointer;
 }
 
-@media (max-width: 1100px) {
-    .left-img {
-        height: 80px;
-    }
-}
-
-@media (max-width: 950px) {
-    .left-img {
-        height: 65px;
-    }
-
-    .left-text {
-        font-size: 1em;
-        line-height: 1.1em;
-    }
-}
-
 .left-text {
     font-size: 1.125em;
     font-weight: 600;
@@ -243,6 +226,10 @@ html {
     background: rgba(255, 255, 255, 0.15);
 }
 
+.nav-links .sign-in {
+    display: none;
+}
+
 /* ---------- SHOW DROPDOWN ON HOVER ---------- */
 .nav-links .dropdown:hover .dropdown-menu {
     display: flex;
@@ -314,34 +301,49 @@ html {
         background: var(--color-primary-dark);
         flex-direction: column;
         gap: 20px;
-        padding: 130px 0 50px 0;
-        text-align: center;
+        padding: 130px 40px 50px 40px;
+        text-align: left;
 
         display: none;
-        max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
         z-index: -1;
     }
 
     .nav-links .dropdown-menu {
-        display: none;
+        display: block;
         position: relative;
+        top: 0;
         background: transparent;
-        margin-top: 10px;
+        margin-top: 20px;
         gap: 3px;
         background-color: var(--color-secondary-dark);
-    }
-
-    .dropdown input:checked ~ .dropdown-menu {
-        display: flex;
+        padding-left: 10px;
     }
 
     /* When menu is opened */
     #menu-toggle:checked~.nav-links {
         display: flex;
-        max-height: 500px;
+        height: 100vh;
     }
+
+    .nav-links .sign-in {
+        display: block;
+        width: 140px;
+        margin: 120px auto 0 auto;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        background-color: transparent;
+        border: 2px solid var(--bg-light);
+        border-radius: 100px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
 }
 
 @keyframes slideDown {
