@@ -112,7 +112,6 @@ html {
 #content-1 .container {
     height: 100%;
     width: 100%;
-    padding-top: 100px;
 }
 
 #content-1 .gradient-divider {
@@ -174,8 +173,10 @@ html {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+
     #content-1 {
-        margin-top: 50px;
+        height: fit-content;
+        padding: 130px 5% 5% 5%;
     }
 
     #content-1 .iam-parent {
