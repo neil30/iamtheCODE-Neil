@@ -1,7 +1,7 @@
 /* Replace MyCustomFont with the actual font name */
 @font-face {
     font-family: 'iam-font';
-    src: url('../fonts/Altone\ Trial-Regular.ttf');
+    src: url('../fonts/CreatoDisplay-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -204,7 +204,7 @@ html {
     position: absolute;
     top: 120%;
     left: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(136, 15, 15, 0.829);
     padding: 10px 0;
     min-width: 180px;
     border-radius: 6px;
@@ -223,7 +223,7 @@ html {
 }
 
 .nav-links .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(206, 80, 80, 0.15);
 }
 
 .nav-links .sign-in {

@@ -1,19 +1,28 @@
+/* Replace MyCustomFont with the actual font name */
+@font-face {
+    font-family: 'iam-font';
+    src: url('../fonts/CreatoDisplay-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* ===== BRAND COLORS ===== */
     --color-primary: #e53935;
     /* main brand color */
-    --color-primary-light: #e45e5c;
-    --color-primary-dark: #6e1616;
+    --color-primary-light: #ef5350;
+    --color-primary-dark: #991b1b;
 
     --color-secondary: #f44336;
     /* accent color */
     --color-secondary-light: #e57373;
-    --color-secondary-dark: #b71c1c;
+    --color-secondary-dark: #771515;
+    --color-accent: #ffc371;
 
     /* ===== BACKGROUND COLORS ===== */
     --bg-main: #ffffff;
-    --bg-light: #f5f5f5;
-    --bg-dark: #1f1f1f;
+    --bg-light: #eeeeee;
+    --bg-dark: #1c2126;
     --bg-darker: #141414;
 
     /* ===== TEXT COLORS ===== */
@@ -46,9 +55,9 @@
     --info: #17a2b8;
 
     /* ===== FONT FAMILIES ===== */
-    --font-primary: 'Poppins', Arial, sans-serif;
-    --font-secondary: 'Montserrat', 'Segoe UI', sans-serif;
-    --font-mono: 'Courier New', monospace;
+    --font-primary: iam-font, sans-serif;
+    --font-secondary: iam-font, sans-serif;
+    --font-mono: iam-font, sans-serif;
 
     /* ===== FONT SIZES (scale) ===== */
     --fs-xs: 0.75rem;
@@ -77,30 +86,45 @@
     --lh-loose: 1.7;
 }
 
+* {
+    box-sizing: border-box;
+    font-family: iam-font, sans-serif;
+}
+
+/* --- Basic Page Reset --- */
+body {
+    margin: 0;
+    font-family: iam-font, sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* --- Navbar Container --- */
 .navbar {
-    height: 80px;
     color: white;
-    background-color: var(--color-primary);
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 25px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    transition: background 0.3s ease, padding 0.3s ease;
+    transition: background 0.7s ease, padding 0.7s ease;
 }
 
 .navbar.default {
-    background: var(--color-primary);
-    padding: 20px 25px;
+    background: var(--color-primary-dark);
+    padding: 50px 50px;
 }
 
 .navbar.scrolled {
     background: var(--color-primary-dark);
+    height: 80px;
     padding: 5px 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
@@ -114,31 +138,17 @@
 }
 
 .left-img {
-    height: 6cap;
+    border-radius: 50%;
+    height: 80px;
     width: auto;
     transition: transform 0.3s ease, height 0.3s ease;
-}
-
-@media (max-width: 1100px) {
-    .left-img {
-        height: 80px;
-    }
-}
-
-@media (max-width: 950px) {
-    .left-img {
-        height: 65px;
-    }
-
-    .left-text {
-        font-size: 1em;
-        line-height: 1.1em;
-    }
+    cursor: pointer;
 }
 
 .left-text {
-    font-size: 1em;
+    font-size: 1.125em;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /* Animate logo when nav opens */
@@ -162,6 +172,7 @@
     font-size: 1em;
     font-weight: 500;
     padding-bottom: 3px;
+    cursor: pointer;
 }
 
 /* Underline animation */
@@ -184,10 +195,56 @@
     width: 100%;
 }
 
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: rgba(136, 15, 15, 0.829);
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 9999;
+}
+
+/* Dropdown link styling */
+.nav-links .dropdown-menu a {
+    padding: 8px 15px;
+    color: white;
+    display: block;
+    font-size: 0.95em;
+}
+
+.nav-links .dropdown-menu a:hover {
+    background: rgba(206, 80, 80, 0.15);
+}
+
+.nav-links .sign-in {
+    display: none;
+}
+
+/* ---------- SHOW DROPDOWN ON HOVER ---------- */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+
 /* --- Right Section --- */
 .right-section img {
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 /* --- Hamburger Icon --- */
@@ -219,6 +276,14 @@
 /* --- Responsive --- */
 @media (max-width: 950px) {
 
+    .navbar.default {
+        padding: 25px 25px;
+    }
+
+    .navbar.scrolled {
+        padding: 5px 15px;
+    }
+
     .hamburger {
         display: block;
     }
@@ -233,25 +298,51 @@
         top: 0;
         left: 0;
         width: 100%;
-        background: #991b1b;
+        background: var(--color-primary-dark);
         flex-direction: column;
         gap: 20px;
-        padding: 130px 0 50px 0;
-        text-align: center;
+        padding: 130px 40px 50px 40px;
+        text-align: left;
 
         display: none;
-        /* hidden default */
-        max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         z-index: -1;
+    }
+
+    .nav-links .dropdown-menu {
+        display: block;
+        position: relative;
+        top: 0;
+        background: transparent;
+        margin-top: 20px;
+        gap: 3px;
+        background-color: var(--color-secondary-dark);
+        padding-left: 10px;
     }
 
     /* When menu is opened */
     #menu-toggle:checked~.nav-links {
         display: flex;
-        max-height: 500px;
+        height: 100vh;
     }
+
+    .nav-links .sign-in {
+        display: block;
+        width: 140px;
+        margin: 120px auto 0 auto;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        background-color: transparent;
+        border: 2px solid var(--bg-light);
+        border-radius: 100px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
 }
 
 @keyframes slideDown {
