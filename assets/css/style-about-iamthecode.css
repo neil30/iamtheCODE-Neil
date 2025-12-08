@@ -106,12 +106,13 @@ html {
 
 #content-1 {
     height: 100vh;
-    padding: 120px 5% 5% 5%;
+    padding: 5% 5% 5% 5%;
 }
 
 #content-1 .container {
     height: 100%;
     width: 100%;
+    padding-top: 100px;
 }
 
 #content-1 .gradient-divider {
