@@ -357,6 +357,14 @@
 
 
   <script src="javascript/script.js"></script>
+  <script>
+    // Scroll Down
+    document.getElementById("scrollTrigger").addEventListener("click", () => {
+      document.getElementById("content-2").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  </script>
 </body>
 
 </html>

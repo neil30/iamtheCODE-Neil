@@ -40,9 +40,16 @@ setInterval(autoScroll, 5000);
 
 // Mobile Nav Bar
 
-// Scroll Down
-document.getElementById("scrollTrigger").addEventListener("click", () => {
-    document.getElementById("content-2").scrollIntoView({
-        behavior: "smooth"
+// Cards
+document.querySelectorAll('#iam-cards .flip-card').forEach(card => {
+    card.addEventListener('click', () => {
+        // Close all cards first
+        document.querySelectorAll('#iam-cards .flip-card').forEach(c => {
+            if (c !== card) c.classList.remove('flip');
+        });
+
+        // Toggle the clicked card
+        card.classList.toggle('flip');
     });
 });
+
