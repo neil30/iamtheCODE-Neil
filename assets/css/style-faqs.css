@@ -288,7 +288,7 @@ html {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px;
+    max-height: 500px;
     padding: 15px 20px;
 }
 
