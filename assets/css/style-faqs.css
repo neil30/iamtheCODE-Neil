@@ -151,7 +151,7 @@ html {
 
 #faq-header .iam-left h1 {
     font-size: 3em;
-    font-weight: bold;
+    font-weight: 800;
     color: var(--text-main);
     padding: 0;
     margin: 0;
@@ -225,15 +225,6 @@ html {
 
     #faq-header .iam-right {
         width: 100%;
-    }
-
-    #faq-header .iam-right h1 {
-        color: var(--bg-dark);
-    }
-
-    #faq-header .iam-right p {
-        color: var(--text-light);
-        max-width: 400px;
     }
 
     #faq-header a.styled-link {
