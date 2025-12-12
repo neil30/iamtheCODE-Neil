@@ -685,7 +685,7 @@ html {
 /* Content-2 */
 
 #content-2 {
-    height: 80vh;
+    height: fit-content;
     padding: 5% 5%;
 }
 
@@ -786,13 +786,9 @@ html {
 /* Content-3 */
 
 #content-3 {
-    height: 100vh;
+    height: fit-content;
     padding: 10% 5%;
     background-color: var(--bg-light);
-}
-
-#content-3 {
-    height: 100vh;
 }
 
 #content-3 .container {

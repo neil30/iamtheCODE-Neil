@@ -101,11 +101,349 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Content 1 */
 #content-1 {
-    height: 100vh;
     padding: 120px 5% 10% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero section */
+.testimonial-hero {
+    padding: 100px 80px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: url("../img/imgs-index/codies.jpg") center/cover no-repeat;
+}
+
+/* Cloud-like gradient overlay */
+.testimonial-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right,
+            rgba(255, 245, 245, 0.89),
+            rgba(255, 255, 255, 0.897));
+    z-index: 0;
+}
+
+/* Soft blurry glow */
+.testimonial-hero::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgb(255, 180, 180);
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Make sure content appears above overlays */
+.testimonial-hero * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Badge */
+#content-1 .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 1.15em;
+    font-weight: 600;
+    border-radius: 20px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* Title */
+#content-1 .testimonial-hero h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+#content-1 .testimonial-hero h1 span {
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Description */
+#content-1 .testimonial-hero p {
+    font-size: 1em;
+    font-weight: 300;
+    width: 500px;
+    max-width: 90%;
+    color: var(--text-light);
+    line-height: 1.7;
+    text-align: center;
+    margin: auto;
+}
+
+#content-1 .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: transparent;
+    border: 2px solid var(--bg-dark);
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--fs-md);
+    border-radius: 100px;
+    transition: 0.3s;
+}
+
+#content-1 .btn:hover {
+    background: var(--bg-dark);
+    color: var(--text-invert);
+}
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+    .testimonial-hero {
+        padding: 80px 50px;
+    }
+
+    #content-1 .testimonial-hero h1 {
+        font-size: 2.2em;
+    }
+
+    #content-1 .testimonial-hero p {
+        font-size: 0.95em;
+        width: 90%;
+    }
+}
+
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+
+    #content-1 {
+        padding: 150px 5% 10% 5%;
+    }
+
+    .testimonial-hero {
+        padding: 60px 30px;
+    }
+
+    #content-1 .badge {
+        font-size: 0.9em;
+    }
+
+    #content-1 .testimonial-hero h1 {
+        font-size: 1.8em;
+    }
+
+    #content-1 .testimonial-hero p {
+        font-size: 0.9em;
+        width: 100%;
+    }
+
+    /* Reduce blur blob size for mobile */
+    .testimonial-hero::after {
+        width: 200px;
+        height: 200px;
+        filter: blur(80px);
+    }
 }
 
 #content-2 {
-    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--bg-light);
+    padding: 5% 0;
+}
+
+#content-2 .card-container-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+#content-2 .card-container {
+    display: flex;
+    overflow-x: hidden;
+    padding: 30px 0;
+    scroll-behavior: smooth;
+    gap: 20px;
+}
+
+#content-2 .card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    /* 3 cards, 2 gaps = 40px */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+#content-2 .card:hover {
+    transform: translateY(-5px);
+}
+
+#content-2 .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: black;
+    border: none;
+    font-size: 50px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#content-2 .nav-left {
+    left: -60px;
+}
+
+#content-2 .nav-right {
+    right: -60px;
+}
+
+#content-2 .card-top {
+    height: fit-content;
+}
+
+#content-2 .card-top img {
+    width: 100%;
+}
+
+#content-2 .card-bottom {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+
+@media (max-width: 900px) {
+    #content-2 .card {
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    #content-2 .card {
+        flex: 0 0 100%;
+    }
+
+    #content-2 .nav-button {
+        font-size: 40px;
+        padding: 5px;
+    }
+
+    #content-2 .nav-left {
+        left: 5px;
+    }
+
+    #content-2 .nav-right {
+        right: 5px;
+    }
+}
+
+.btn-vid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btn-vid button {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* Left → Right Hover Overlay */
+.btn-vid button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+    transition: width 0.4s ease;
+    border-radius: inherit;
+}
+
+.btn-vid button:hover::before {
+    width: 100%;
+}
+
+.btn-vid button:hover {
+    color: #f8f8f8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Responsive Video Wrapper */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
