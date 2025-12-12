@@ -277,11 +277,16 @@ html {
     text-decoration: underline;
 }
 
-
 #content-2 .gradient-divider {
     height: 10px;
     width: 60%;
     margin-top: 8px;
     border-radius: 3px;
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+@media (max-width: 768px) {
+    .project-wrapper {
+        width: 90%;
+    }
 }
