@@ -292,10 +292,36 @@ html {
     text-align: left;
     transition: transform 0.3s;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #content-2 .card:hover {
     transform: translateY(-5px);
+}
+
+#content-2 .card-bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+}
+
+#content-2 .card-bottom p {
+    flex: 1;
+    padding-top: 20px;
+}
+
+#content-2 .card-bottom h4 {
+    color: var(--color-primary);
+    text-align: right;
+}
+
+#content-2 .btn-vid {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
 }
 
 #content-2 .nav-button {
@@ -351,10 +377,12 @@ html {
 
     #content-2 .nav-left {
         left: 5px;
+        top: 30%;
     }
 
     #content-2 .nav-right {
         right: 5px;
+        top: 30%;
     }
 }
 
@@ -379,6 +407,10 @@ html {
     overflow: hidden;
     z-index: 1;
     transition: color 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Left → Right Hover Overlay */
@@ -403,6 +435,23 @@ html {
     color: #f8f8f8;
 }
 
+.openVideo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 10px solid currentColor;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -416,6 +465,14 @@ html {
     align-items: center;
     padding: 20px;
     z-index: 999;
+}
+
+.close-button {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .modal-content {
