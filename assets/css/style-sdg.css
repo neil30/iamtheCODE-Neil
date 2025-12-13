@@ -289,3 +289,34 @@ html {
         width: 90%;
     }
 }
+
+#content-3 {
+    height: 30vh;
+}
+
+.sdg-divider {
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(to right,
+            #ed3d4a 0% 5%,
+            #e5b44b 5% 10%,
+            #5bab48 10% 15%,
+            #d32f3a 15% 20%,
+            #ff532b 20% 25%,
+            #25c8e9 25% 30%,
+            #fdcc03 30% 35%,
+            #b42e53 35% 40%,
+            #ff7e30 40% 45%,
+            #e7317b 45% 50%,
+            #ffad2f 50% 55%,
+            #cc9b3c 55% 60%,
+            #4f8e57 60% 65%,
+            #01a7e1 65% 70%,
+            #66c739 70% 75%,
+            #007dad 75% 80%,
+            #1f5b7d 80% 85%,
+            #66c739 85% 90%,
+            #007dad 90% 95%,
+            #1f5b7d 95% 100%);
+
+}
