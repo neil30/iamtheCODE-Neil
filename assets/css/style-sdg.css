@@ -304,6 +304,7 @@ html {
 #content-3 h1 {
     width: 80%;
     padding: 50px 0;
+    color: var(--text-main);
 }
 
 .sdg-divider {
@@ -330,5 +331,4 @@ html {
             #66c739 85% 90%,
             #007dad 90% 95%,
             #1f5b7d 95% 100%);
-
 }
